@@ -1,6 +1,6 @@
 import sys
 import os
-BASEPATH = os.path.abspath(__file__).split('rpg_time_optimal', 1)[0]+'rpg_time_optimal/'
+BASEPATH = os.path.abspath(__file__).split('time_optimal_trajectory', 1)[0]+'time_optimal_trajectory/'
 sys.path += [BASEPATH + 'src']
 from trajectory import Trajectory
 import matplotlib.pyplot as plt

@@ -1,6 +1,6 @@
 import sys
 import os
-BASEPATH = os.path.abspath(__file__).split('rpg_time_optimal', 1)[0]+'rpg_time_optimal/'
+BASEPATH = os.path.abspath(__file__).split('time_optimal_trajectory', 1)[0]+'time_optimal_trajectory/'
 sys.path += [BASEPATH + 'src']
 from track import Track
 from quad import Quad
@@ -22,4 +22,3 @@ traj = Trajectory(x, NPW=planner.NPW, wp=planner.wp)
 traj.save(BASEPATH + '/example/result_cpc_format.csv', False)
 traj.save(BASEPATH + '/example/result.csv', True)
 
-print(traj.u)
