@@ -456,18 +456,20 @@ class Trajectory:
     p = []
     lgnd = []
     if plot_thrusts:
-      for i in range(self.NU):
-        p += ax.plot(self.t_u, self.u[i,:], ustyle, label='$u_%d$' % i, **kwargs)
+      p += ax.plot(self.t_u, np.sum(self.u, axis=0), astyle, label='$u%d$', **kwargs) 
+      # for i in range(self.NU):
+      #   p += ax.plot(self.t_u, self.u[i,:], ustyle, label='$u_%d$' % i, **kwargs)
 
-    for i in range(min(len(data), 3)):
-      p += ax.plot(self.t_u, self.m * self.a[data[i]], astyle, label='$f_%c$' % plot_axis[i], **kwargs)
 
-    if plot_abs:
-      if len(data) < 1:
-        label = '$\|u\|$'
-      else:
-        label = '$\|f\|$'
-      p += ax.plot(self.t_u, np.sum(self.u, axis=0), astyle, label=label, **kwargs)
+    # for i in range(min(len(data), 3)):
+    #   p += ax.plot(self.t_u, self.m * self.a[data[i]], astyle, label='$f_%c$' % plot_axis[i], **kwargs)
+
+    # if plot_abs:
+    #   if len(data) < 1:
+    #     label = '$\|u\|$'
+    #   else:
+    #     label = '$\|f\|$'
+    #   p += ax.plot(self.t_u, np.sum(self.u, axis=0), astyle, label=label, **kwargs)
 
     if len(title) > 0:
       ax.set_title(title)
