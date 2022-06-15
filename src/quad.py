@@ -9,6 +9,7 @@ class Quad:
     self.l = 1                                        # arm length
     self.I = DM([(1, 0, 0), (0, 1, 0), (0, 0, 1)])    # Inertia
     self.I_inv = inv(self.I)                          # Inertia inverse
+    # self.T_max = 5                                    # max thrust [N]
     self.T_max = 5                                    # max thrust [N]
     self.T_min = 0                                    # min thrust [N]
     self.omega_max = 3                                # max bodyrate [rad/s]
@@ -48,14 +49,14 @@ class Quad:
 
 
     if 'TWR_max' in quad:
-      self.T_max = quad['TWR_max'] * 9.81 * self.m / 4
+      self.T_max = quad['TWR_max'] * 9.8 * self.m / 4
     elif 'thrust_max' in quad:
       self.T_max = quad['thrust_max']
     else:
       print("No max thrust specified in " + filename)
 
     if 'TWR_min' in quad:
-      self.T_min = quad['TWR_min'] * 9.81 * self.m / 4
+      self.T_min = quad['TWR_min'] * 9.8 * self.m / 4
     elif 'thrust_min' in quad:
       self.T_min = quad['thrust_min']
     else:
@@ -87,7 +88,7 @@ class Quad:
     if 'rampup_dist' in quad:
       self.rampup_dist = quad['rampup_dist']
       if 'TWR_ramp_start' in quad and 'omega_ramp_start' in quad:
-        self.T_ramp_start = min(quad['TWR_ramp_start'] * 9.81 * self.m / 4, self.T_max)
+        self.T_ramp_start = min(quad['TWR_ramp_start'] * 9.8 * self.m / 4, self.T_max)
         self.omega_ramp_start = min(quad['omega_ramp_start'], self.omega_max_xy)
       else:
         print("No TWR_ramp_start or omega_ramp_start specified. Disabling rampup")

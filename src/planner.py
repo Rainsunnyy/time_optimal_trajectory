@@ -47,7 +47,7 @@ class Planner:
     if 'tolerance' in options:
       self.tol = options['tolerance']
     else:
-      self.tol = 0.3
+      self.tol = 0.1
 
     self.N = self.NPW * self.NW
     self.dpn = dist[-1] / self.N

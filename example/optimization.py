@@ -13,7 +13,7 @@ track = Track(BASEPATH + "/tracks/track.yaml")
 quad = Quad(BASEPATH + "/quads/quad.yaml")
 
 cp = CallbackPlot(pos='xy', vel='xya', ori='xyzw', rate='xyz', inputs='u', prog='mn')
-planner = Planner(quad, track, RungeKutta4, {'tolerance': 0.3, 'nodes_per_gate': 40, 'vel_guess': 3.0})
+planner = Planner(quad, track, RungeKutta4, {'tolerance': 0.05, 'nodes_per_gate': 40, 'vel_guess': 3.0})
 planner.setup()
 planner.set_iteration_callback(cp)
 x = planner.solve()
