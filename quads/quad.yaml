@@ -7,13 +7,15 @@ inertia:        [[0.001, 0, 0],
                  [0, 0, 0.0017]]
 thrust_min:     0.0                 # min thrust per propeller [N]
 # TWR_max:        3.3                 # max thrust to weight ratio
-TWR_max:        1.43                 # max thrust to weight ratio
-omega_max_xy:   15.0                # max bodyrate magnitude [rad/s]
+TWR_max:        1.2                 # max thrust to weight ratio
+omega_max_xy:   3               # max bodyrate magnitude [rad/s]
+# omega_max_xy:   15               # max bodyrate magnitude [rad/s]
 omega_max_z:    0.3                 # max bodyrate magnitude [rad/s]
 torque_coeff:   0.05                # thrust to drag relation
 
 # rampup_dist:        35          # distance over which we ramp up [m]
 # TWR_ramp_start:     1.5         # start of TWR ramp
 rampup_dist:        6          # distance over which we ramp up [m]  gazebo situation
-TWR_ramp_start:     1.3         # start of TWR ramp
-omega_ramp_start:   4.5         # start of XY body rates ramp [rad/s]
+TWR_ramp_start:     1        # start of TWR ramp
+omega_ramp_start:   0        # start of XY body rates ramp [rad/s]
+# omega_ramp_start:   1.5        # start of XY body rates ramp [rad/s]
