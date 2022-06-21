@@ -364,8 +364,8 @@ class Trajectory:
 
     p = [] 
     for i in range(min(len(data), 3)):
-      if not 'label' in kwargs:
-        kwargs['label'] = '$v_%c$' % plot_axis[i]
+      # if not 'label' in kwargs:
+      #   kwargs['label'] = '$v_%c$' % plot_axis[i]
       p += ax.plot(self.t_x, self.v[data[i]], **kwargs)
 
     if plot_abs:

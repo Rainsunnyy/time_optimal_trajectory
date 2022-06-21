@@ -14,7 +14,7 @@ class Quad:
     self.T_min = 0                                    # min thrust [N]
     self.omega_max = 3                                # max bodyrate [rad/s]
     self.ctau = 0.5                                   # thrust torque coeff.
-    self.rampup_dist = 0
+    self.rampup_dist = 1
     self.T_ramp_start = 5
     self.omega_ramp_start = 3
 
