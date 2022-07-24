@@ -47,7 +47,7 @@ class Planner:
     if 'tolerance' in options:
       self.tol = options['tolerance']
     else:
-      self.tol = 0.1
+      self.tol = 0.2
 
     self.N = self.NPW * self.NW
     self.dpn = dist[-1] / self.N
@@ -275,11 +275,10 @@ class Planner:
       g += [xk[2]]
       lb += [0.5]
       ub += [100.0]              # infinity
-
-      for j in range(self.NW-1):
-        g += [muk[j+1]-muk[j]]
-        lb += [0]
-        ub += [1]
+      
+      # g += [xk[6]*xk[9] + xk[7] * xk[8]]
+      # lb += [-0.1]
+      # ub += [0.1]
 
       # for j in range(self.NW-1):
       #   g += [xk[6:10]]
